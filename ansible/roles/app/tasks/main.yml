@@ -1,0 +1,45 @@
+- name: Install httpd
+  dnf:
+    name: httpd
+    state: present
+
+- name: Start httpd
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Copy index.html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    mode: '0644'
+    owner: root
+    group: root  
+
+- name: Restart httpd
+  service:
+    name: httpd
+    state: restarted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
