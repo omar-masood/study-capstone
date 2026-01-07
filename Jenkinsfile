@@ -63,5 +63,4 @@ pipeline {
     }
 }
  
-vi Jenkinsfile
  
