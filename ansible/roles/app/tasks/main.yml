@@ -15,15 +15,19 @@
     dest: /var/www/html/index.html
     mode: '0644'
     owner: root
-    group: root  
+    group: root
 
 - name: Restart httpd
   service:
     name: httpd
     state: restarted
-- name: stopping firewall
-  service: firewalld
-  state: stopped  
+
+- name: Stop firewalld
+  service:
+    name: firewalld
+    state: stopped
+
+
 
 
 
